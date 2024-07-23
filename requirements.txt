@@ -1,0 +1,16 @@
+Flask
+Flask-WTF
+Flask-Cors
+Flask-Login
+Flask-Bcrypt
+Flask-Limiter
+Flask-Caching
+Flask-SQLAlchemy
+redis
+black
+pytest
+pydantic
+gunicorn
+python-dotenv
+email-validator
+Werkzeug==2.3.7
