@@ -6,3 +6,7 @@ channel = "stable-24_05"
 
 [deployment]
 run = ["sh", "-c", "app.py"]
+
+[[ports]]
+localPort = 6379
+externalPort = 80

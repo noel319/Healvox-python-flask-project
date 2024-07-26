@@ -9,7 +9,7 @@ def create_app(debug: bool = False):
     # Check if debug environment variable was passed
     FLASK_DEBUG = os.environ.get("FLASK_DEBUG", False)
     if FLASK_DEBUG:
-        debug = FLASK_DEBUG
+        debug = False
 
     # Create the Flask application instance
     app = Flask(
