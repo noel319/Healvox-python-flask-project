@@ -10,12 +10,18 @@ from app.utils.models import generate_uuid
 
 
 class User(db.Model, UserMixin):
-    id = db.Column(
-        db.String, primary_key=True, default=generate_uuid, unique=True, nullable=False
-    )
+    id = db.Column(db.String,
+                   primary_key=True,
+                   default=generate_uuid,
+                   unique=True,
+                   nullable=False)
     name = db.Column(db.String(80), nullable=False)
     email = db.Column(db.String(255), unique=True, nullable=False)
     password = db.Column(db.String, nullable=False)
+    adress = db.Column(db.String(255), unique=True)
+    sex = db.Column(db.String(8), unique=True)
+    birthday = db.Column(db.Date, unique=True)
+    role = db.Column(db.String(8), unique=True, nullable=False, default="user")
     created_date = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
