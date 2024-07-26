@@ -1,5 +1,6 @@
 .idea
 .env*
+/myenv
 !.env.example
 **/__pycache___
 .pytest_cache
