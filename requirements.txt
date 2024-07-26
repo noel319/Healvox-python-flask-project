@@ -6,6 +6,8 @@ Flask-Bcrypt
 Flask-Limiter
 Flask-Caching
 Flask-SQLAlchemy
+Flask-Mail
+Flask-PyMySQL
 redis
 black
 pytest

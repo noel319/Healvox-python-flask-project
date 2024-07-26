@@ -1,7 +1,10 @@
 # Flask modules
-from flask import Blueprint, redirect, url_for, flash, render_template
+from flask import Blueprint, redirect, url_for, flash, render_template, request, flash
 from flask_login import login_required, current_user
-from flask_login import login_user, logout_user
+from flask_login import login_user, logout_user, UserMixin, login_required, LoginManager
+from flask_mail import Mail, Message
+from werkzeug.security import generate_password_hash, check_password_hash
+import random
 
 # Other modules
 import logging
@@ -15,7 +18,7 @@ auth_bp = Blueprint("auth", __name__, url_prefix="/auth")
 
 
 @auth_bp.route("/login", methods=["GET", "POST"])
-@limiter.limit("30/minute")
+@limiter.limit("10/minute")
 def login():
     if current_user.is_authenticated:
         return redirect(url_for("pages.core.home_route"))
