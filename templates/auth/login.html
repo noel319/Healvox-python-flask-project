@@ -1,42 +1,104 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="{{url_for('static', filename='assets/iconeinicial.png')}}" />
+<title>Entrar</title>
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+/>
+<link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}" />
+<link
+    rel="icon"
 
-{% block title %}
-Login
-{% endblock title %}
+/>
+<script
+    src="https://kit.fontawesome.com/cf6fa412bd.js"
+    crossorigin="anonymous"
+></script>
+</head>
 
-{% block content %}
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <form method="POST" class="bg-light p-4 border rounded">
-                {% with errors = get_flashed_messages(category_filter=["danger"]) %}
-                {% if errors %}
-                <div class="alert alert-danger">
-                    {{ errors[0] }}
-                </div>
-                {% endif %}
-                {% endwith %}
-                {{ form.hidden_tag() }}
-                <div class="form-group">
-                    {{ form.email.label(class="form-control-label") }}
-                    {{ form.email(class="form-control") }}
-                </div>
-                <div class="form-group">
-                    {{ form.password.label(class="form-control-label") }}
-                    {{ form.password(class="form-control") }}
-                </div>
-                <div class="form-group">
-                    {{ form.remember_me.label() }}
-                    {{ form.remember_me() }}
-                </div>
-                <div class="form-group">
-                    {{ form.submit(class="btn btn-primary btn-block") }}
-                </div>
-                <div class="text-center">
-                    Don't have an account? <a href="{{ url_for('auth.register') }}">Register</a>
-                </div>
-            </form>
+<body>
+<div class="container1">
+    <div class="container">
+    <div class="buttonsForm">
+        <div class="btnColor"></div>
+        <button id="btnSignin">Entrar</button>
+        <button id="btnSignup">Cadastrar</button>
+    </div>
+    <!-- login -->
+    <form id="signin" action="{{ url_for('auth.login')}}" method="post">
+        <input
+        id="email-login"
+        name="email-login"
+        type="text"
+        placeholder="E-mail"
+        required
+        value=""
+        />
+        <i class="fas fa-envelope iEmail" id="icon-email"></i>
+        <input
+        id="senha-login"
+        name="password-login"
+        type="password"
+        placeholder="Senha"
+        required
+        value=""
+        />
+
+        <i class="fas fa-lock iPassword" id="icon-password"></i>
+        <div class="divCheck">
+        <a id="text-recuperar" href="/recuperar">Problemas para acessar?</a>
         </div>
+        <button type="submit">Entrar</button>
+        <h4 style="margin: 20px; text-align: center"></h4>
+        <h6></h6>
+    </form>
+    <!-- criarconta -->
+    <form id="signup" action="{{ url_for('auth.register')}}" method="post">
+        <input
+        type="text"
+        placeholder="Nome"
+        name="name-register"
+        required
+        value=""
+        />
+
+        <input
+        type="text"
+        placeholder="E-mail"
+        name="email-register"
+        required
+        value=""
+        />
+
+        <input
+        type="password"
+        placeholder="Senha"
+        name="password-register"
+        required
+        value=""
+        />
+
+        <input
+        type="password"
+        placeholder="Confirme sua senha"
+        name="confirm-password-register"
+        required
+        />
+
+        <div class="divCheck">
+        <input type="checkbox" required />
+        <span>Aceite os termos e condições.</span>
+        </div>
+        <button type="submit">Criar Conta</button>
+    </form>
     </div>
 </div>
-{% endblock content %}
+
+    <script src="{{url_for('static', filename='js/login.js')}}"></script>
+</body>
+</html>

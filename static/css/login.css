@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+  
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+}
+
+body {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    margin: 0;
+    font-family: "poppins", sans-serif;
+  }
+
+  .text-container {
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-right: 10rem;
+    max-width: 530px;
+  }
+
+  .container {
+    background-color: whitesmoke;
+    padding: 6px;
+    width: 350px;
+    height: 470px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 darkgrey;
+  }
+
+  .buttonsForm {
+    margin-top: 40px;
+    position: relative;
+    border-radius: 30px;
+  }
+
+  .buttonsForm button {
+    cursor: pointer;
+    background: transparent;
+
+    border: none;
+    position: relative;
+    padding: 10px 29px;
+  }
+
+  body {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    margin: 0;
+    font-family: "poppins", sans-serif;
+  }
+
+  .text-container {
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-right: 10rem;
+    max-width: 530px;
+  }
+
+  .container {
+    background-color: whitesmoke;
+    padding: 6px;
+    width: 350px;
+    height: 470px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 darkgrey;
+  }
+
+  .buttonsForm {
+    margin-top: 40px;
+    position: relative;
+    border-radius: 30px;
+  }
+
+  .buttonsForm button {
+    cursor: pointer;
+    background: transparent;
+
+    border: none;
+    position: relative;
+    padding: 10px 29px;
+  }
+
+  .btnColor {
+    position: absolute;
+    width: 108px;
+    height: 100%;
+    background: linear-gradient(to right, #5086c1, #84b6f4);
+    border-radius: 30px;
+    transition: 0.3s;
+  }
+
+  .container1 {
+    display: flex;
+    margin-top: 5rem;
+  }
+
+  .espacamento-entre-linhas {
+    margin-bottom: 50px; /* ou use padding-bottom: 20px; */
+  }
+
+  .espacamento-entre-linhas2 {
+    margin-top: 50px; /* ou use padding-bottom: 20px; */
+  }
+
+  .container1 {
+    display: flex;
+    margin-top: 5rem;
+  }
+
+  .espacamento-entre-linhas {
+    margin-bottom: 50px; /* ou use padding-bottom: 20px; */
+  }
+
+  .espacamento-entre-linhas2 {
+    margin-top: 50px; /* ou use padding-bottom: 20px; */
+  }
+
+.container {
+  background-color: whitesmoke;
+  padding: 6px;
+  width: 370px;
+  height: 470px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 darkgrey;
+}
+
+form {
+  position: absolute;
+  margin-top: 80px;
+  transition: 0.5s;
+  width: 300px;
+  height: 400px;
+}
+
+.buttonsForm {
+  margin-top: 40px;
+  position: relative;
+  border-radius: 30px;
+  box-shadow: 0 0 7px 0 rgb(40, 88, 92);
+}
+
+.buttonsForm button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  position: relative;
+  padding: 10px 29px;
+}
+
+input[type="text"],
+input[type="password"] {
+  border: 0px solid #dfdfdf;
+  margin-top: 10px;
+  border-radius: 60px;
+  padding: 8px 0 8px 35px;
+  outline: none;
+  width: 100%;
+}
+
+#email-login,
+#senha-login {
+  border: none;
+  margin-top: 40px;
+  border-radius: 60px;
+  padding: 8px 0 8px 35px;
+  outline: none;
+  width: 100%;
+}
+
+button[type="submit"] {
+  background: #5086c1;
+  color: white;
+  border-radius: 30px;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 8px 0 8px 15px;
+  font-size: 15px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.divCheck {
+  margin: 10px 0 0 5px;
+  width: 80%;
+  font-size: 13px;
+}
+
+#signin {
+  left: 25px;
+}
+
+#signup {
+  left: 450px;
+}
+
+i {
+  position: absolute;
+  left: 0;
+  padding: 10px 10px;
+}
+
+#text-recuperar {
+  text-decoration: none;
+  color: rgb(0, 81, 255);
+}
+
+#text-recuperar:hover {
+  text-decoration: underline;
+  color: rgb(0, 81, 255);
+}
+
+form #icon-email {
+  position: absolute;
+  top: 40px;
+}
+
+form #icon-password {
+  position: absolute;
+  top: 115px;
+}
+
+h6 {
+  margin: 10px;
+  padding-left: 10px;
+  text-align: center;
+}
