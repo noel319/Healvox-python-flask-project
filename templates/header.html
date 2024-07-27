@@ -1,0 +1,21 @@
+<!-- Header-->
+<button class="contact-btn">
+    <img class="image-btn" src="{{url_for('static', filename='assets/call.png')}}" alt="" />
+  </button>
+  <header class="header">
+    <a href="/">
+      <img class="logo" src="{{url_for('static', filename='assets/logotipo.png')}}" alt="logotipo" />
+    </a>
+    <button id="button-mobile">
+      <i id="header-button-icon" class="bi bi-list"></i>
+    </button>
+    <nav id="navbar-content">
+      <ul class="navbar">
+        <a href="{{ url_for('auth.login') }}">
+            <button 
+                class="button-login"  >Entrar
+            </button>
+        </a>
+      </ul>
+    </nav>
+  </header>

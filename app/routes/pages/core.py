@@ -6,4 +6,4 @@ core_bp = Blueprint("core", __name__, url_prefix="/")
 
 @core_bp.route("/")
 def home_route():
-    return render_template("index.html")
+    return render_template("pages/index.html")

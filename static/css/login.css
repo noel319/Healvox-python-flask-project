@@ -123,7 +123,10 @@ body {
 
   .container1 {
     display: flex;
-    margin-top: 5rem;
+    width: 100%;
+    background-image:url('../assets/medico.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .espacamento-entre-linhas {
@@ -132,12 +135,7 @@ body {
 
   .espacamento-entre-linhas2 {
     margin-top: 50px; /* ou use padding-bottom: 20px; */
-  }
-
-  .container1 {
-    display: flex;
-    margin-top: 5rem;
-  }
+  }  
 
   .espacamento-entre-linhas {
     margin-bottom: 50px; /* ou use padding-bottom: 20px; */

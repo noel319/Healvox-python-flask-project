@@ -17,25 +17,26 @@ auth_bp = Blueprint("auth", __name__, url_prefix="/auth")
 
 
 @auth_bp.route("/login", methods=["GET", "POST"])
-@limiter.limit("10/minute")
-def login():
+@limiter.limit("60/minute")
+def login():   
     if current_user.is_authenticated:
         return redirect(url_for("pages.core.home_route"))
 
     else:
-        email =request.form['email']
-        password= request.form['password']
-        user = User.query.filter_by(email=email).one_or_none()        
-        if user and bcrypt.check_password_hash(user.password, password):
-            if user.is_active:
-                login_user(user)           
-                return redirect(url_for("pages.core.home_route"))
-            else:
-                flash('Please verify your email before logging in.', 'warning')
-                return redirect(url_for('auth.verify_email'))
-        flash('Invalid credentials, please try again.','danger')
-
-    return render_template("auth/login.html")
+        if request.method=='POST' :
+            email =request.form['email-login']
+            password= request.form['password-login']
+            user = User.query.filter_by(email=email).one_or_none()        
+            if user and bcrypt.check_password_hash(user.password, password):
+                if user.is_active:
+                    login_user(user)           
+                    return redirect(url_for("pages.core.home_route"))
+                else:
+                    flash('Please verify your email before logging in.', 'warning')
+                    return redirect(url_for('auth.verify_email'))
+            flash('Invalid credentials, please try again.','danger')
+        else:
+            return render_template("auth/login.html")
 
 
 @auth_bp.route("/register", methods=["GET", "POST"])
@@ -71,7 +72,7 @@ def register():
     return redirect(url_for('auth.verify_email'))   
 
 # Email Verification Route
-@auth_bp.route('/auth/verify_email', methods=['GET', 'POST'])
+@auth_bp.route('/verify_email', methods=['GET', 'POST'])
 @limiter.limit("1/minute")
 def verify_email():
     if request.method =='POST':

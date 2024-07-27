@@ -1,0 +1,118 @@
+{% extends "_base.html" %}
+{% block content %}
+<section class="carousel-content">
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="image">
+            <div class="text-home">
+              <h2>Healvox</h2>
+              <p>
+                A Healvox é uma plataforma inovadora que visa revolucionar a
+                forma como as pessoas interagem com a saúde. Combinando
+                tecnologia e conhecimento médico, oferecemos uma variedade de
+                serviços e recursos para pacientes, profissionais da saúde e
+                entusiastas do bem-estar.
+              </p>
+              <div class="trace"></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="image">
+            <div class="text-home">
+              <h2>Healvox</h2>
+              <p>
+                A Healvox é uma plataforma inovadora que visa revolucionar a
+                forma como as pessoas interagem com a saúde. Combinando
+                tecnologia e conhecimento médico, oferecemos uma variedade de
+                serviços e recursos para pacientes, profissionais da saúde e
+                entusiastas do bem-estar.
+              </p>
+              <div class="trace"></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="image">
+            <div class="text-home">
+              <h2>Healvox</h2>
+              <p>
+                A Healvox é uma plataforma inovadora que visa revolucionar a
+                forma como as pessoas interagem com a saúde. Combinando
+                tecnologia e conhecimento médico, oferecemos uma variedade de
+                serviços e recursos para pacientes, profissionais da saúde e
+                entusiastas do bem-estar.
+              </p>
+              <div class="trace"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="service-content">
+    <h1>Serviços</h1>
+    <div class="card-content">
+      <div>
+        <img class="icons" src="{{url_for('static', filename='assets/image.png')}}" alt="" />
+        <p>Saúde geral</p>
+      </div>
+      <div>
+        <img class="icons" src="{{url_for('static', filename='assets/image2.png')}}" alt="" />
+        <p>Exames</p>
+      </div>
+      <div>
+        <img class="icons" src="{{url_for('static', filename='assets/image3.png')}}" alt="" />
+        <p>Consultas</p>
+      </div>
+      <div>
+        <img class="icons" src="{{url_for('static', filename='assets/image4.png')}}"alt="" />
+        <p>Ambulância</p>
+      </div>
+      <div>
+        <img class="icons" src="{{url_for('static', filename='assets/image5.png')}}" alt="" />
+        <p>Enfermagem</p>
+      </div>
+    </div>
+  </section>
+  <section class="contact-content">
+    <img class="contact-image" src="{{url_for('static', filename='assets/contato.png')}}" alt="" />
+    <div class="text-content">
+      <p>
+        Na Healvox, priorizamos nossos usuários ao oferecer os melhores
+        serviços de saúde. Nossa missão é fornecer informações especializadas,
+        criar uma comunidade ativa e facilitar o acesso a consultas e
+        acompanhamento personalizado. Junte-se a nós nessa jornada em busca de
+        uma vida mais saudável e informada!
+      </p>
+    </div>
+  </section>
+
+    <h2  class="center-text">
+        Patrocinadores
+    </h2>
+  
+
+  <!-- cards em loop -->
+  <div class="logos">
+      <div class="logos-slide">
+        <img src="{{url_for('static', filename='assets/nexus.png')}}" />
+        <img src="{{url_for('static', filename='assets/patrocinio.png')}}" />
+        <img src="{{url_for('static', filename='assets/patrocinio.png')}}" />
+        <img src="{{url_for('static', filename='assets/patrocinio.png')}}" />
+      </div>
+
+      <div class="logos-slide">
+        <img src="{{url_for('static', filename='assets/nexus.png')}}" />
+        <img src="{{url_for('static', filename='assets/patrocinio.png')}}" />
+        <img src="{{url_for('static', filename='assets/patrocinio.png')}}" />
+        <img src="{{url_for('static', filename='assets/patrocinio.png')}}" />
+      </div>
+    </div>
+  <!-- fim cards -->
+{% endblock %}
