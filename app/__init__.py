@@ -1,6 +1,6 @@
 # Flask modules
 from flask import Flask
-
+from flask_wtf.csrf import CSRFProtect
 # Other modules
 import os
 
@@ -18,7 +18,8 @@ def create_app(debug: bool = False):
         static_folder="../static",
         static_url_path="/",
     )
-
+    # Make csrf token
+    csrf = CSRFProtect()
     # Set current_app context
     app.app_context().push()
 

@@ -1,0 +1,25 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="logo">
+        <!-- Logo image here -->
+        <img src="logo.png" alt="lojaintegrada Logo">
+    </div>
+    <div class="verification-box">
+        <h1>Verificação de 2 etapas</h1>
+        <p>Insira o código gerado pelo aplicativo de autenticação</p>
+        <p>{{ email }}</p>
+        <form id="signup" action="{{ url_for('auth.verify_email', email=email)}}" method="post">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+            <input type="text" placeholder="" name="">
+                <button class="btn">Continuar</button>
+                <button class="btn">Voltar</button>
+        </form>
+        <a href="caminho da função">
+        <button class="btn">reenviar email </button>        
+        </a>
+        <p><a href="#">Perdeu acesso ao seu dispositivo? Entre em contato conosco</a></p>
+    </div>
+</div>
+{% endblock %}

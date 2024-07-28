@@ -35,7 +35,7 @@ class DevConfig:
     TEMPLATES_AUTO_RELOAD = True
     STATIC_AUTO_RELOAD = True
     EXPLAIN_TEMPLATE_LOADING = False
-    SECRET_KEY = SECRET_KEY
+    SECRET_KEY = "sjddlfghd123"
     SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:iwpSHiGDXghiwKJjLQHQgeTDGPvfbbho@viaduct.proxy.rlwy.net:17828/railway"
     FLASK_DEBUG = True
     # Caching
@@ -52,9 +52,10 @@ class DevConfig:
     "/api/auth/",
     ]
     # Mail Configuration
-    MAIL_SERVER = 'smtp.your-email-provider.com'
-    MAIL_PORT = 587
+    MAIL_SERVER = 'sandbox.smtp.mailtrap.io'
+    MAIL_PORT = 2525
     MAIL_USE_TLS = True
-    MAIL_USERNAME = 'your-email@example.com'
-    MAIL_PASSWORD = 'your-email-password'
-    MAIL_DEFAULT_SENDER = 'your-email@example.com'
+    MAIL_USE_SSL = False
+    MAIL_USERNAME = '394df105f1ee4b'
+    MAIL_PASSWORD = 'ebb7926eb7ae09'
+    MAIL_DEFAULT_SENDER = 'azeisl917@gmail.com'

@@ -26,6 +26,7 @@
     </div>
     <!-- login -->
     <form id="signin" action="{{ url_for('auth.login')}}" method="post">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
         <input
         id="email-login"
         name="email-login"
@@ -54,6 +55,7 @@
     </form>
     <!-- criarconta -->
     <form id="signup" action="{{ url_for('auth.register')}}" method="post">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
         <input
         type="text"
         placeholder="Nome"
