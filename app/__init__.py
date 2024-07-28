@@ -18,6 +18,7 @@ def create_app(debug: bool = False):
         static_folder="../static",
         static_url_path="/",
     )
+    app.secret_key = 'your_secret_key'
     # Make csrf token
     csrf = CSRFProtect()
     # Set current_app context

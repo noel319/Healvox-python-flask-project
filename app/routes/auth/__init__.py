@@ -19,7 +19,7 @@ auth_bp = Blueprint("auth", __name__, url_prefix="/auth")
 @limiter.limit("60/minute")
 def login():   
     if current_user.is_authenticated:
-        return redirect(url_for("pages.core.home_route"))
+        return render_template('auth/welcome.html', user=current_user)
 
     else:
         if request.method=='POST' :
@@ -29,7 +29,7 @@ def login():
             if user and bcrypt.check_password_hash(user.password, password):
                 if user.is_active:
                     login_user(user)           
-                    return redirect(url_for("auth.welcome", user=user))
+                    return render_template('auth/welcome.html', user=user)
                 else:
                     html =render_template("auth/confirm_email.html", code=user.verification_code)
                     subject = "Please confirm your email"
@@ -37,6 +37,7 @@ def login():
                     flash('Please verify your email before logging in.', 'warning')
                     return redirect(url_for('auth.verify_email', email=email))
             flash('Invalid credentials, please try again.','danger')
+            return render_template("auth/login.html")
         else:
             return render_template("auth/login.html")
 
@@ -51,7 +52,10 @@ def register():
     email = request.form['email-register']
     password = request.form['password-register']
     hashed_password = bcrypt.generate_password_hash(password)
-
+    user = User.query.filter_by(email=email).one_or_none()
+    if user:
+        flash('This account is exiested, please login.','warn')
+        return render_template("auth/login.html")
      # Generate a random 6-digit verification code
     verification_code = f"{random.randint(100000, 999999)}"
 
@@ -87,7 +91,7 @@ def verify_email(email):
             user.verification_code = None
             db.session.commit()
             flash('Your account has been confirmed!', 'success')
-            return redirect(url_for('auth.welcome', user=user))
+            return render_template('auth/welcome.html', user=user)
         else:
             flash('Invalid verification code. Please try again.', 'danger')
     return render_template('auth/verify_email.html',email=email)
@@ -98,7 +102,3 @@ def logout():
     logout_user()
     return redirect(url_for("auth.login"))
 
-@auth_bp.route('/welcome', methods=['GET', 'POST'])
-@limiter.limit("60/minute")
-def welcome(user):
-    render_template('auth/welcome.html', user=user)

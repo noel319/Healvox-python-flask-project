@@ -12,7 +12,7 @@
         <p>{{ email }}</p>
         <form id="signup" action="{{ url_for('auth.verify_email', email=email)}}" method="post">
             <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
-            <input type="text" placeholder="" name="">
+            <input type="text" placeholder="" name="code">
                 <button class="btn">Continuar</button>
                 <button class="btn">Voltar</button>
         </form>

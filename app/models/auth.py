@@ -24,7 +24,7 @@ class User(db.Model, UserMixin):
     adress = db.Column(db.String(255), unique=True)
     sex = db.Column(db.String(50), unique=True)
     birthday = db.Column(db.Date, unique=True)
-    role = db.Column(db.String(50), unique=True, nullable=False, default="user")
+    role = db.Column(db.String(50), nullable=False, default="user")
     is_active = db.Column(db.Boolean, default=False)
     verification_code = db.Column(db.String(6), nullable=True)
     created_date = db.Column(db.DateTime, default=datetime.utcnow)
