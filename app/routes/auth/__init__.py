@@ -90,7 +90,7 @@ def verify_email(email):
             return redirect(url_for('auth.welcome', user=user))
         else:
             flash('Invalid verification code. Please try again.', 'danger')
-    return render_template('auth/verify_email.html')
+    return render_template('auth/verify_email.html',email=email)
 
 @auth_bp.route("/logout", methods=["GET", "POST"])
 @login_required
