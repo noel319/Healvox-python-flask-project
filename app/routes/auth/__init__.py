@@ -29,7 +29,7 @@ def login():
             if user and bcrypt.check_password_hash(user.password, password):
                 if user.is_active:
                     login_user(user)           
-                    return redirect(url_for("pages.core.home_route"))
+                    return redirect(url_for("auth.welcome", user=user))
                 else:
                     html =render_template("auth/confirm_email.html", code=user.verification_code)
                     subject = "Please confirm your email"
@@ -87,7 +87,7 @@ def verify_email(email):
             user.verification_code = None
             db.session.commit()
             flash('Your account has been confirmed!', 'success')
-            return redirect(url_for('auth.login'))
+            return redirect(url_for('auth.welcome', user=user))
         else:
             flash('Invalid verification code. Please try again.', 'danger')
     return render_template('auth/verify_email.html')
@@ -97,3 +97,8 @@ def verify_email(email):
 def logout():
     logout_user()
     return redirect(url_for("auth.login"))
+
+@auth_bp.route('/welcome', methods=['GET', 'POST'])
+@limiter.limit("60/minute")
+def welcome(user):
+    render_template('auth/welcome.html', user=user)
