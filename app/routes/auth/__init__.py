@@ -3,7 +3,7 @@ from flask import Blueprint, redirect, url_for, flash, render_template, request,
 from flask_login import login_required, current_user
 from flask_login import login_user, logout_user, login_required
 from app.utils.email import send_email
-from werkzeug.security import generate_password_hash, check_password_hash
+from app.utils.token import generate_token, confirm_token
 import random
 # Other modules
 import logging
